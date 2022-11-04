@@ -254,7 +254,7 @@ d3.csv('RamseyPollingPlaces.csv', function(error, data) {
             y: [0, 1]
           },
           style: 'light',
-          zoom: 14,
+          zoom: 13,
           
         },
         width: window.innerWidth-18,
