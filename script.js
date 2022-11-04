@@ -50,6 +50,12 @@ for (let i=0;i<hamlineCoord[1].length;i++) {
     h2lat.push(hamlineCoord[1][i][1])
 }
 
+let zoomLevel = 14
+
+if (window.innerWidth < 900) {
+    zoomLevel = 13
+}
+
 
 d3.csv('RamseyPollingPlaces.csv', function(error, data) {
     d = {}
@@ -254,7 +260,7 @@ d3.csv('RamseyPollingPlaces.csv', function(error, data) {
             y: [0, 1]
           },
           style: 'light',
-          zoom: 13,
+          zoom: zoomLevel,
           
         },
         width: window.innerWidth-18,
