@@ -54,6 +54,8 @@ let zoomLevel = 14
 
 if (window.innerWidth < 900) {
     zoomLevel = 13
+} if (window.innerWidth < 400) {
+    zoomLevel = 12
 }
 
 
@@ -87,7 +89,6 @@ d3.csv('RamseyPollingPlaces.csv', function(error, data) {
 
     for (let i=0;i<k.length;i++) {
         o = k[i]
-        console.log(d[o][125])
         d[o][125] = d[o][124]
 
     }
@@ -251,8 +252,8 @@ d3.csv('RamseyPollingPlaces.csv', function(error, data) {
         dragmode: 'zoom',
         mapbox: {
           center: {
-            lat: d['lat'][128],
-            lon: d['lon'][128]
+            lat: h1lat[3]+.0035,
+            lon: h1lon[4]
           },
 
           domain: {
