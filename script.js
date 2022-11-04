@@ -98,8 +98,8 @@ d3.csv('RamseyPollingPlaces.csv', function(error, data) {
           zoom: 14,
           
         },
-        width: window.innerWidth,
-        height: window.innerHeight,
+        width: window.innerWidth-18,
+        height: window.innerHeight-18,
         margin: {
           r: 5,
           t: 50,
