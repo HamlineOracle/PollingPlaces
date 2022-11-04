@@ -1,5 +1,7 @@
 //    <script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
 
+let w = Window.innerWidth
+let h = Window.innerHeight
 
 d3.csv('RamseyPollingPlaces.csv', function(error, data) {
     d = {}
@@ -33,6 +35,12 @@ d3.csv('RamseyPollingPlaces.csv', function(error, data) {
 
     data2 = []
 
+    tposOptions = ['top right', 'bottom right']
+    tpos = []
+    for (let i=0;i<d['Name'].length;i++) {
+        tpos.push(tposOptions[i%2])
+    }
+
     data2.push({
         type: 'scattermapbox',
         mode: 'markers+text',
@@ -51,7 +59,7 @@ d3.csv('RamseyPollingPlaces.csv', function(error, data) {
 
         },
         text: d['Text'],
-        textposition: 'bottom right',
+        textposition: 'top right',
     })
 
     
@@ -78,6 +86,9 @@ d3.csv('RamseyPollingPlaces.csv', function(error, data) {
             lat: d['lat'][128],
             lon: d['lon'][128]
           },
+          bounds: {
+            east: d['lon'][0]
+          },
 
           domain: {
             x: [0, 1],
@@ -87,6 +98,8 @@ d3.csv('RamseyPollingPlaces.csv', function(error, data) {
           zoom: 14,
           
         },
+        width: window.innerWidth,
+        height: window.innerHeight,
         margin: {
           r: 5,
           t: 50,
@@ -94,16 +107,7 @@ d3.csv('RamseyPollingPlaces.csv', function(error, data) {
           l: 5,
           pad: 0
         },
-        xaxis: {
-            linecolor: 'black',
-            linewidth: 2,
-            mirror: true
-          },
-          yaxis: {
-            linecolor: 'black',
-            linewidth: 2,
-            mirror: true
-          },
+
         paper_bgcolor: '#ffffff',
         plot_bgcolor: '#9d2235',
         showlegend: false,
