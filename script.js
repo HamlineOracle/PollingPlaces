@@ -225,7 +225,7 @@ d3.csv('TwinCitiesPollingPlaces.csv', function(error, data) {
     
     layout = {
         title: {
-            text: 'Ramsey County Polling Places',
+            text: 'Polling Places Near Hamline',
             font: {
                 family: 'Open Sans, Sans-serif',
                 size: 25,
