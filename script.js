@@ -57,7 +57,7 @@ if (window.innerWidth < 900) {
 }
 
 
-d3.csv('RamseyPollingPlaces.csv', function(error, data) {
+d3.csv('TwinCitiesPollingPlaces.csv', function(error, data) {
     d = {}
 
     function unpack(rows, key) {
@@ -130,7 +130,7 @@ d3.csv('RamseyPollingPlaces.csv', function(error, data) {
           color: 'blue',
           reversescale: true,
           opacity: 0.5,
-          size: 15,
+          size: 10,
 
         },
         text: d['Text'],
@@ -151,7 +151,7 @@ d3.csv('RamseyPollingPlaces.csv', function(error, data) {
           color: 'blue',
           reversescale: true,
           opacity: 0.5,
-          size: 15,
+          size: 10,
 
         },
         text: hancock['Text'],
@@ -159,7 +159,7 @@ d3.csv('RamseyPollingPlaces.csv', function(error, data) {
     })
 
     data3 = []
-    data2.push({
+    data3.push({
         type: 'scattermapbox',
         mode: 'markers+text',
         hoverinfo: 'none',
