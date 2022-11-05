@@ -54,8 +54,6 @@ let zoomLevel = 14
 
 if (window.innerWidth < 900) {
     zoomLevel = 13
-} if (window.innerWidth < 400) {
-    zoomLevel = 12
 }
 
 
